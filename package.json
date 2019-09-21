@@ -1,0 +1,14 @@
+{
+  "name": "play-ci",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:yassermzh-germany/play-ci.git",
+  "author": "Yasser Zadeh <yassermzh.germany@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "dependencies": {
+    "jasmine": "^3.5.0"
+  }
+}
