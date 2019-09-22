@@ -6,7 +6,7 @@
   "author": "Yasser Zadeh <yassermzh.germany@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "node jasmine.js"
+    "test": "sh scripts/run-tests.sh"
   },
   "dependencies": {},
   "devDependencies": {
