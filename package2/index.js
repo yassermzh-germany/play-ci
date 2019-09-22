@@ -1,3 +1,3 @@
-console.log("package2 loaded");
+console.log("package2 loaded!");
 
 module.exports = () => {};
