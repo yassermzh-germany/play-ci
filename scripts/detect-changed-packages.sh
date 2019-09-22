@@ -6,8 +6,12 @@ TEST_FILE='index.spec.js'
 
 function join_by { local IFS="$1"; shift; echo "$*"; }
 
+# for branch build
+changes=$(git --no-pager diff --name-only ${TRAVIS_COMMIT_RANGE} --)
+
+# for merge build
 # changes=$(git --no-pager diff --name-only FETCH_HEAD $(git merge-base FETCH_HEAD master) | cut -d"/" -f1 | sort -u)
-changes=$(git --no-pager diff --name-only master $(git merge-base FETCH_HEAD master) | cut -d"/" -f1 | sort -u)
+# changes=$(git --no-pager diff --name-only master $(git merge-base FETCH_HEAD master) | cut -d"/" -f1 | sort -u)
 echo "changes=$changes"
 
 # only consider changes if it's directory
