@@ -5,4 +5,7 @@ git:
   depth: 30
 cache: yarn
 script:
-  - yarn test
+  # - yarn test
+  - [ $TRAVIS_COMMIT_MESSAGE != *"skip test"* ] && yarn test;
+  # - [ "${TRAVIS_PULL_REQUEST}" = "false" ] &&
+
