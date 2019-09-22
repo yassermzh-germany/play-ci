@@ -7,7 +7,8 @@ TEST_FILE='index.spec.js'
 function join_by { local IFS="$1"; shift; echo "$*"; }
 
 # for branch build
-changes=$(git --no-pager diff --name-only ${TRAVIS_COMMIT_RANGE} --)
+COMMIT_RANGE='19343b1e2a66...20865cb3feef'
+changes=$(git --no-pager diff --name-only ${COMMIT_RANGE} --)
 
 # for merge build
 # changes=$(git --no-pager diff --name-only FETCH_HEAD $(git merge-base FETCH_HEAD master) | cut -d"/" -f1 | sort -u)
