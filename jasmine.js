@@ -1,7 +1,7 @@
 const Jasmine = require("jasmine");
 const jasmine = new Jasmine({});
 // console.log([ (process.env.PACKAGE || "*") + "/**/*[sS]pec.js"])
-console.log(`package=${process.env.PACKAGE}`)
+console.log(`!! package=${process.env.PACKAGE}`)
 jasmine.loadConfig({
     // spec_dir: 'spec',
     spec_files: [ (process.env.PACKAGE || "*") + "/**/*[sS]pec.js", "!node_modules/**/*.js"],
