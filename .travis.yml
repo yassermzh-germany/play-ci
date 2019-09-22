@@ -6,6 +6,7 @@ git:
 cache: yarn
 script:
   # - yarn test
-  - [ $TRAVIS_COMMIT_MESSAGE != *"skip test"* ] && yarn test;
+  - if [[ $TRAVIS_COMMIT_MESSAGE != *"skip test"* ]]; then yarn test ; fi ;
+  # - [[ $TRAVIS_COMMIT_MESSAGE != *"skip test"* ]] && yarn test;
   # - [ "${TRAVIS_PULL_REQUEST}" = "false" ] &&
 
