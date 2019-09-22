@@ -7,13 +7,11 @@ TEST_FILE='index.spec.js'
 function join_by { local IFS="$1"; shift; echo "$*"; }
 
 # for branch build
-# TRAVIS_COMMIT_RANGE='9360c35...e0a894e'
 changes=$(git --no-pager diff --name-only $TRAVIS_COMMIT_RANGE | cut -d"/" -f1 | sort -u)
 
 # for merge build
 # changes=$(git --no-pager diff --name-only FETCH_HEAD $(git merge-base FETCH_HEAD master) | cut -d"/" -f1 | sort -u)
 # changes=$(git --no-pager diff --name-only master $(git merge-base FETCH_HEAD master) | cut -d"/" -f1 | sort -u)
-# echo "changes=$changes"
 
 # only consider changes if it's directory
 result=()
@@ -31,5 +29,4 @@ done
 
 # result=( "${result[@]} package1")
 result=$(echo "$result" | tr [:space:] '\n' | sort -u)
-[[ -z "${result// }" ]] && result="spec"
 echo "+($(join_by "|" $result))"
