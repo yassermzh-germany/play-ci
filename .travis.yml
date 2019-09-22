@@ -5,4 +5,6 @@ git:
   depth: 30
 cache: yarn
 script:
-  - yarn test
+  # - yarn test
+  - if [[ $TRAVIS_COMMIT_MESSAGE != *"skip test"* ]]; then yarn test ; fi ;
+
